@@ -1,0 +1,18 @@
+<section>
+  <% const {totalDocs, totalPages, page, prevPage, nextPage} = pageData;%>
+   <% if(prevPage) { %>
+     <a href="/feed/?page=<%=prevPage%>"> ก่อนหน้า </a>
+      หน้า <%= page %> 
+  <% } %> 
+
+  <% if (totalPages === nextPage) { %>
+    <a href="/feed/?page=<%=nextPage%>">ถัดไป ...<%=nextPage%> </a>
+  <% } else if (nextPage) {%>
+    <a href="/feed/?page=<%=nextPage%>"> ถัดไป </a>
+  <% } else if (page === totalPages){ %> 
+    หน้าสุดท้าย
+  <p class="mt-5"><<< รวมข้อมูลทั้งหมด <%=totalDocs%> รายการ >>></p>
+  <%} else { %>
+    <a href="/feed/?page=<%=totalPages%>"> ...<%=totalPages%> </a>
+  <% } %>
+</section>

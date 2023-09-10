@@ -1,0 +1,49 @@
+<div class="table-responsive mt-3">
+    <table class="table table-hover ">
+  
+          <thead class="table-light">
+            <th>วันที่ล่าสุด</th>
+            <th>สถานะล่าสุด</th>
+            <th>ชื่อ Social</th>
+            <th>ลิงค์</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+            <th>เลขประจำตัวฯ</th>
+            <th>ประเด็น</th>
+            <th>จำนวนหลัง</th>
+            <th>ตำบล</th>
+            <th>อำเภอ</th>
+            <th>พิกัด map</th>
+            <th>โฉนด</th>
+            <th>ความน่าสนใจ</th>
+            <th>ผู้โพส</th>
+            <th>ลิงค์รูป</th>
+          </thead>
+
+        <% for(var i=0; i<posts.length; i++) {%>
+          <tbody>
+            <tr>
+              <td><%= posts[i].updatedAt.toLocaleString("th-TH")%></td>
+              <td><%= posts[i].state%></td>
+              <td><a class="link" href="/post/<%= posts[i]._id%>">
+                <%= posts[i].socialMediaName%></td>
+              </a></td>
+              <td><%= posts[i].link%></td>
+              <td><%= posts[i].name%></td>
+              <td><%= posts[i].lastName%></td>
+              <td><%= posts[i].nid%></td>
+              <td><%= posts[i].summary%></td>
+              <td><%= posts[i].numberOfUnits%></td>
+              <td><%= posts[i].tambon%></td>
+              <td><%= posts[i].amphur%></td>
+              <td><%= posts[i].mapPoint%></td>
+              <td><%= posts[i].deed%></td>
+              <td><%= posts[i].likes%></td>
+              <td><%= posts[i].posterName%></td>
+              <td><%= posts[i].imageLink%></td>
+            </tr>
+          </tbody>
+      
+        <% } %>
+    </table>
+  </div> 

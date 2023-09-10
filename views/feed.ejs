@@ -1,0 +1,23 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <search>
+      <form
+        action="/post/search/"
+        enctype="application/x-www-form-urlencoded"
+        method="POST"
+      >
+        <label for="socialAndName">ค้นหา</label>
+          <input type="search" placeholder="ชื่อ..." name="socialAndName" class="input input-bordered w-full max-w-xs"/>
+        <button type="submit" class="btn btn-outline">Search</button>
+      </form>
+    </search>
+    <div class="mt-2">
+      <a href="/feed">Go back to feed</a>
+    </div>
+
+    <%- include('partials/table') -%> <% if (pageData) { %> <%-
+    include('partials/pagination') -%> <%}%>
+  </div>
+</div>
+<%- include('partials/footer') -%>

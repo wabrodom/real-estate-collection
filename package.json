@@ -2,8 +2,9 @@
   "name": "real-estate-collection",
   "version": "1.0.0",
   "description": "collect data on real estate business",
-  "engines" : { 
-    "node" : ">=16.20.1"
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=16.20.1"
   },
   "main": "server.js",
   "scripts": {

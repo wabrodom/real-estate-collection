@@ -1,0 +1,7 @@
+<% if(linkOrText.slice(0, 4) === 'http') { %>
+     <a href="<%= linkOrText%>" target="_blank" rel="noopener noreferrer">
+        <%= linkOrText%>
+    </a>
+<% } else { %>
+    <%= linkOrText%>
+<% } %>

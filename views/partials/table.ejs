@@ -31,13 +31,8 @@
                 </a>
               </td>
               <td>
-                <% if(posts[i].link.slice(0, 4) === 'http') { %>
-                    <a href="<%= posts[i].link%>" target="_blank" rel="noopener noreferrer">
-                      <%= posts[i].link%>
-                    </a>
-                <% } else { %>
-                    <%= posts[i].link%>
-                <% } %>
+                <%const linkText = posts[i].link%>
+                <%- include('linkOrText', {linkOrText :linkText }) -%>
               </td>
               <td><%= posts[i].name%></td>
               <td><%= posts[i].lastName%></td>
@@ -50,10 +45,15 @@
               <td><%= posts[i].deed%></td>
               <td><%= posts[i].likes%></td>
               <td><%= posts[i].posterName%></td>
-              <td><%= posts[i].imageLink%></td>
+              <td>
+                <%const imgLink = posts[i].imageLink%>
+                <%- include('linkOrText', {linkOrText :imgLink }) -%>
+              </td>
             </tr>
           </tbody>
       
         <% } %>
     </table>
   </div> 
+
+ 

@@ -1,59 +1,91 @@
-<div class="table-responsive mt-3">
-    <table class="table table-hover ">
+<table class="table table-hover ">
+
+      <thead class="table-light">
+        <th>วันที่ล่าสุด</th>
+        <th>สถานะล่าสุด</th>
+        <th>ชื่อ Social</th>
+        <th>ลิงค์</th>
+        <th>ชื่อ</th>
+        <th>นามสกุล</th>
+        <th>เลขประจำตัวฯ</th>
+        <th>ประเด็น</th>
+        <th>จำนวนหลัง</th>
+        <th>ตำบล</th>
+        <th>อำเภอ</th>
+        <th>พิกัด map</th>
+        <th>โฉนด</th>
+        <th>ความน่าสนใจ</th>
+        <th>ผู้โพส</th>
+        <th>ลิงค์รูป</th>
+      </thead>
+
+  <% if (posts.length !== undefined) {%>
+      <% for(var i=0; i<posts.length; i++) {%>
+    <tbody>
+          <tr>
+            <td><%= posts[i].updatedAt.toLocaleString("th-TH")%></td>
+            <td><%= posts[i].state%></td>
+            <td>
+              <a class="link" href="/post/<%= posts[i]._id%>">
+                <%= posts[i].socialMediaName%>
+              </a>
+            </td>
+            <td>
+              <%const linkText = posts[i].link%>
+              <%- include('linkOrText', {linkOrText :linkText }) -%>
+            </td>
+            <td><%= posts[i].name%></td>
+            <td><%= posts[i].lastName%></td>
+            <td><%= posts[i].nid%></td>
+            <td><%= posts[i].summary%></td>
+            <td><%= posts[i].numberOfUnits%></td>
+            <td><%= posts[i].tambon%></td>
+            <td><%= posts[i].amphur%></td>
+            <td><%= posts[i].mapPoint%></td>
+            <td><%= posts[i].deed%></td>
+            <td><%= posts[i].likes%></td>
+            <td><%= posts[i].posterName%></td>
+            <td>
+              <%const imgLink = posts[i].imageLink%>
+              <%- include('linkOrText', {linkOrText :imgLink }) -%>
+            </td>
+          </tr>
+      <% }%>
+
+     <% } else if(posts.length === undefined) {%>
+          <tr>
+            <td><%= posts.updatedAt.toLocaleString("th-TH")%></td>
+            <td><%= posts.state%></td>
+            <td>
+              <a class="link" href="/post/<%= posts._id%>">
+                <%= posts.socialMediaName%>
+              </a>
+            </td>
+            <td>
+              <%const linkTextCaseSingle = posts.link%>
+              <%- include('linkOrText', {linkOrText :linkTextCaseSingle }) -%>
+            </td>
+            <td><%= posts.name%></td>
+            <td><%= posts.lastName%></td>
+            <td><%= posts.nid%></td>
+            <td><%= posts.summary%></td>
+            <td><%= posts.numberOfUnits%></td>
+            <td><%= posts.tambon%></td>
+            <td><%= posts.amphur%></td>
+            <td><%= posts.mapPoint%></td>
+            <td><%= posts.deed%></td>
+            <td><%= posts.likes%></td>
+            <td><%= posts.posterName%></td>
+            <td><%= posts.imageLink%></td>
+          </tr>
+        <% }%>
+              
+    </tbody>
   
-          <thead class="table-light">
-            <th>วันที่ล่าสุด</th>
-            <th>สถานะล่าสุด</th>
-            <th>ชื่อ Social</th>
-            <th>ลิงค์</th>
-            <th>ชื่อ</th>
-            <th>นามสกุล</th>
-            <th>เลขประจำตัวฯ</th>
-            <th>ประเด็น</th>
-            <th>จำนวนหลัง</th>
-            <th>ตำบล</th>
-            <th>อำเภอ</th>
-            <th>พิกัด map</th>
-            <th>โฉนด</th>
-            <th>ความน่าสนใจ</th>
-            <th>ผู้โพส</th>
-            <th>ลิงค์รูป</th>
-          </thead>
 
-        <% for(var i=0; i<posts.length; i++) {%>
-          <tbody>
-            <tr>
-              <td><%= posts[i].updatedAt.toLocaleString("th-TH")%></td>
-              <td><%= posts[i].state%></td>
-              <td>
-                <a class="link" href="/post/<%= posts[i]._id%>">
-                  <%= posts[i].socialMediaName%>
-                </a>
-              </td>
-              <td>
-                <%const linkText = posts[i].link%>
-                <%- include('linkOrText', {linkOrText :linkText }) -%>
-              </td>
-              <td><%= posts[i].name%></td>
-              <td><%= posts[i].lastName%></td>
-              <td><%= posts[i].nid%></td>
-              <td><%= posts[i].summary%></td>
-              <td><%= posts[i].numberOfUnits%></td>
-              <td><%= posts[i].tambon%></td>
-              <td><%= posts[i].amphur%></td>
-              <td><%= posts[i].mapPoint%></td>
-              <td><%= posts[i].deed%></td>
-              <td><%= posts[i].likes%></td>
-              <td><%= posts[i].posterName%></td>
-              <td>
-                <%const imgLink = posts[i].imageLink%>
-                <%- include('linkOrText', {linkOrText :imgLink }) -%>
-              </td>
-            </tr>
-          </tbody>
-      
-        <% } %>
-    </table>
-  </div> 
 
- 
+
+
+</table>
+
+

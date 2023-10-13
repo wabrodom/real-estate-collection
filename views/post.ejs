@@ -5,7 +5,20 @@
       <h2><%= post.socialMediaName %></h2>
       
       <div class="table-responsive">
-        <table class="table table-hover ">
+
+        <div class="table-responsive mt-3">
+          <% const posts = post%>
+          <%- include('partials/table', {posts: post}) -%> 
+        </div> 
+        <% if( comments.length !== 0 ) {%>
+       
+          <%  if (comments.length === 1) {%>
+             <h2> Comment </h2>
+          <% } else {%>
+              <h2> Comments </h2>
+          <% } %>
+          
+         <table class="table table-hover ">
       
               <thead class="table-light">
                 <th>วันที่ล่าสุด</th>
@@ -25,29 +38,8 @@
                 <th>ผู้โพส</th>
                 <th>ลิงค์รูป</th>
               </thead>
-    
-         
-              <tbody>
-                <tr>
-                  <td><%= post.updatedAt.toLocaleString("th-TH")%></td>
-                  <td><%= post.state%></td>
-                  <td><a class="link" href="/post/<%= post._id%>">
-                    <%= post.socialMediaName%></td>
-                  </a></td>
-                  <td><%= post.link%></td>
-                  <td><%= post.name%></td>
-                  <td><%= post.lastName%></td>
-                  <td><%= post.nid%></td>
-                  <td><%= post.summary%></td>
-                  <td><%= post.numberOfUnits%></td>
-                  <td><%= post.tambon%></td>
-                  <td><%= post.amphur%></td>
-                  <td><%= post.mapPoint%></td>
-                  <td><%= post.deed%></td>
-                  <td><%= post.likes%></td>
-                  <td><%= post.posterName%></td>
-                  <td><%= post.imageLink%></td>
-                </tr>
+
+            <tbody>
               <% for(let i=0; i <comments.length; i++) {%>
                 <tr>
                   <td><%= comments[i].updatedAt.toLocaleString("th-TH")%></td>
@@ -68,10 +60,11 @@
                   <td><%= comments[i].imageLink%></td>
                 </tr>
               <%}%>
-              </tbody>
+            </tbody>
           
     
         </table>
+        <% }%>
       </div> 
       
       <%if(post.user == user.id){ %>

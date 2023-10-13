@@ -16,8 +16,13 @@
       <a href="/feed">Go back to feed</a>
     </div>
 
-    <%- include('partials/table') -%> <% if (pageData) { %> <%-
-    include('partials/pagination') -%> <%}%>
+    <div class="table-responsive mt-3">
+      <%- include('partials/table', {posts: posts}) -%> 
+    </div> 
+
+    <% if (pageData) { %> 
+      <%- include('partials/pagination') -%> 
+    <%}%>
   </div>
 </div>
 <%- include('partials/footer') -%>

@@ -25,10 +25,20 @@
             <tr>
               <td><%= posts[i].updatedAt.toLocaleString("th-TH")%></td>
               <td><%= posts[i].state%></td>
-              <td><a class="link" href="/post/<%= posts[i]._id%>">
-                <%= posts[i].socialMediaName%></td>
-              </a></td>
-              <td><%= posts[i].link%></td>
+              <td>
+                <a class="link" href="/post/<%= posts[i]._id%>">
+                  <%= posts[i].socialMediaName%>
+                </a>
+              </td>
+              <td>
+                <% if(posts[i].link.slice(0, 4) === 'http') { %>
+                    <a href="<%= posts[i].link%>" target="_blank" rel="noopener noreferrer">
+                      <%= posts[i].link%>
+                    </a>
+                <% } else { %>
+                    <%= posts[i].link%>
+                <% } %>
+              </td>
               <td><%= posts[i].name%></td>
               <td><%= posts[i].lastName%></td>
               <td><%= posts[i].nid%></td>

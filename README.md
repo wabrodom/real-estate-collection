@@ -1,4 +1,4 @@
-# Real Estate Collection MVP
+# Real Estate Collection
 
 ## Ojective
 
@@ -6,7 +6,7 @@ This web application goal is intended to assist officers in collecting real esta
 
 ## Primary Goal
 
-The primary goal is to eliminate duplicated efforts within the team, especially when team members spot the same entrepreneur posting simultaneously. Before this members will need to repeatedly ask others or ignore the new posts entirely, and hope others will do they job.
+The primary goal is to eliminate duplicated efforts within the team, especially when team members spot the same entrepreneur posting simultaneously. Before team members will need to repeatedly ask others or ignore the new posts entirely, and hope others will keep track of new posts.
 
 ## Efficient Workflow
 

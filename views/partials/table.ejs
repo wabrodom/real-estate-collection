@@ -1,14 +1,14 @@
 <table class="table table-hover ">
 
-      <thead class="table-light">
+      <thead class="table-light text-left">
         <th>วันที่ล่าสุด</th>
         <th>สถานะล่าสุด</th>
         <th>ชื่อ Social</th>
-        <th>ลิงค์</th>
-        <th>ชื่อ</th>
+        <th class="column-link">ลิงค์</th>
+        <th class="column-name">ชื่อ</th>
         <th>นามสกุล</th>
-        <th>เลขประจำตัวฯ</th>
-        <th>ประเด็น</th>
+        <th class="column-id">เลขประจำตัวฯ</th>
+        <th class="column-point">ประเด็น</th>
         <th>จำนวนหลัง</th>
         <th>ตำบล</th>
         <th>อำเภอ</th>
@@ -26,7 +26,7 @@
             <td><%= posts[i].updatedAt.toLocaleString("th-TH")%></td>
             <td><%= posts[i].state%></td>
             <td>
-              <a class="link" href="/post/<%= posts[i]._id%>">
+              <a class="link bold" href="/post/<%= posts[i]._id%>">
                 <%= posts[i].socialMediaName%>
               </a>
             </td>
@@ -57,7 +57,7 @@
             <td><%= posts.updatedAt.toLocaleString("th-TH")%></td>
             <td><%= posts.state%></td>
             <td>
-              <a class="link" href="/post/<%= posts._id%>">
+              <a class="link bold" href="/post/<%= posts._id%>">
                 <%= posts.socialMediaName%>
               </a>
             </td>

@@ -1,0 +1,21 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.column-name,
+.column-point {
+  width: 10%;
+}
+.column-link {
+  width: 15%;
+}
+
+.column-id {
+  width: 6%;
+}
+
+.bold {
+  font-weight: 700;
+}

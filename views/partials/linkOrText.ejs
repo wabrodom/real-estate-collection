@@ -1,6 +1,13 @@
 <% if(linkOrText.slice(0, 4) === 'http') { %>
      <a href="<%= linkOrText%>" target="_blank" rel="noopener noreferrer">
-        <%= linkOrText%>
+        <% if(posts.length > 0) {%>
+            <%= linkOrText.slice(0,64)%>
+            <% if (linkOrText.length > 50) {%>
+                ...
+            <% } %>
+        <% } else { %>
+            <%= linkOrText%>
+        <% } %>
     </a>
 <% } else { %>
     <%= linkOrText%>

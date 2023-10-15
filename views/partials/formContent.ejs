@@ -3,7 +3,7 @@
     <div class="mb-2 col-2">
         <label for="state" class="form-label">การดำเนินการล่าสุด *</label>
 
-        <select name="state" class="form-control" id="state">
+        <select name="state" class="form-control" id="state" required   >
             <option value="">--โปรดเลือก 1 ข้อ--</option>
             <option value="ค้นหา">ค้นหา</option>
             <option value="ค้นแล้วไม่มีประเด็น">ค้นแล้วไม่มีประเด็น</option>
@@ -18,12 +18,12 @@
     <div class="mb-2 col-5">
         <label for="socialMediaName" class="form-label">ชื่อ Social <%= poster ? "*" : "" %></label>
         <input type="text" class="form-control" id="socialMediaName" name="socialMediaName" 
-        <% if (post) { %> value="<%= post.socialMediaName %>"<% } %> >
+        <% if (post) { %> value="<%= post.socialMediaName %>"<% } %> <%= poster ? " required " : "" %>>
     </div>
     <div class="mb-2 col-5">
         <label for="link" class="form-label">ลิงค์ <%= poster ? "*" : "" %></label>
         <input type="text" class="form-control" id="link" name="link" 
-        <% if (post) { %> value="<%= post.link %>"<% } %> >
+        <% if (post) { %> value="<%= post.link %>"<% } %> <%= poster ? " required " : "" %>>
     </div>
 
 </div>  
@@ -33,7 +33,7 @@
     <div class="mb-2 col">
         <label for="name" class="form-label">ชื่อ <%= poster ? "*" : "" %></label>
         <input type="text" class="form-control" id="name" name="name"
-        <% if (post) { %> value="<%= post.name %>"<% } %> >
+        <% if (post) { %> value="<%= post.name %>"<% } %> <%= poster ? " required " : "" %>>
     </div>
     <div class="mb-2 col">
         <label for="lastName" class="form-label">นามสกุล</label>
@@ -42,7 +42,7 @@
     </div>
     <div class="mb-2 col">
         <label for="nid" class="form-label">เลขประจำตัวฯ</label>
-        <input type="text" class="form-control" id="nid" name="nid"
+        <input type="number" class="form-control" id="nid" name="nid"
         <% if (post) { %> value="<%= post.nid %>"<% } %> >
     </div>
 
@@ -51,25 +51,25 @@
 <div class="row">
     <div class="mt-2 mb-4">
     <label for="summary" class="form-label">สรุปประเด็น <%= poster ? "*" : "" %></label>
-    <textarea class="form-control" id="summary" name="summary"><% if (post) { %><%= post.summary %><% } %> </textarea>
+    <textarea class="form-control" id="summary" name="summary" <%= poster ? " required " : "" %>><% if (post) {%><%=post.summary%><%}%></textarea>
     </div>
 </div>
 
     <div class="row">
         <div class="mb-2 col">
             <label for="numberOfUnits" class="form-label">จำนวนแปลง/หลัง</label>
-            <input type="text" class="form-control" id="numberOfUnits" name="numberOfUnits"
+            <input type="number" class="form-control" id="numberOfUnits" name="numberOfUnits"
             <% if (post) { %> value="<%= post.numberOfUnits %>"<% } %> >
         </div>
         <div class="mb-2 col">
             <label for="tambon" class="form-label">ตำบล <%= poster ? "*" : "" %></label>
             <input type="text" class="form-control" id="tambon" name="tambon"
-            <% if (post) { %> value="<%= post.tambon %>"<% } %> >
+            <% if (post) { %> value="<%= post.tambon %>"<% } %> <%= poster ? " required " : "" %>>
         </div>
         <div class="mb-2 col">
             <label for="amphur" class="form-label">อำเภอ <%= poster ? "*" : "" %></label>
             <input type="text" class="form-control" id="amphur" name="amphur"
-            <% if (post) { %> value="<%= post.amphur %>"<% } %> >
+            <% if (post) { %> value="<%= post.amphur %>"<% } %> <%= poster ? " required " : "" %>>
         </div>
         <div class="mb-2 col">
             <label for="mapPoint" class="form-label">พิกัด</label>
@@ -82,7 +82,7 @@
 <div class="row">
     <div class="mb-2 col">
         <label for="deed" class="form-label">เลขที่โฉนด</label>
-        <input type="text" class="form-control" id="deed" name="deed"
+        <input type="number" class="form-control" id="deed" name="deed"
         <% if (post) { %> value="<%= post.deed %>"<% } %> >
     </div>
     <div class="mb-2 col">

@@ -1,0 +1,97 @@
+<div class="row mt-3">
+
+    <div class="mb-2 col-2">
+        <label for="state" class="form-label">การดำเนินการล่าสุด *</label>
+
+        <select name="state" class="form-control" id="state">
+            <option value="">--โปรดเลือก 1 ข้อ--</option>
+            <option value="ค้นหา">ค้นหา</option>
+            <option value="ค้นแล้วไม่มีประเด็น">ค้นแล้วไม่มีประเด็น</option>
+            <option value="รวบรวมข้อมูล">รวบรวมข้อมูล</option>
+            <option value="พร้อมส่ง">พร้อมส่ง</option>
+            <option value="ส่งให้ทีมแล้ว">ส่งให้ทีมแล้ว</option>
+            <option value="ทีมทำแล้ว">ทีมทำแล้ว</option>
+        </select>
+
+    </div>
+
+    <div class="mb-2 col-5">
+        <label for="socialMediaName" class="form-label">ชื่อ Social <%= poster ? "*" : "" %></label>
+        <input type="text" class="form-control" id="socialMediaName" name="socialMediaName" 
+        <% if (post) { %> value="<%= post.socialMediaName %>"<% } %> >
+    </div>
+    <div class="mb-2 col-5">
+        <label for="link" class="form-label">ลิงค์ <%= poster ? "*" : "" %></label>
+        <input type="text" class="form-control" id="link" name="link" 
+        <% if (post) { %> value="<%= post.link %>"<% } %> >
+    </div>
+
+</div>  
+
+<div class="row">
+
+    <div class="mb-2 col">
+        <label for="name" class="form-label">ชื่อ <%= poster ? "*" : "" %></label>
+        <input type="text" class="form-control" id="name" name="name"
+        <% if (post) { %> value="<%= post.name %>"<% } %> >
+    </div>
+    <div class="mb-2 col">
+        <label for="lastName" class="form-label">นามสกุล</label>
+        <input type="text" class="form-control" id="lastName" name="lastName"
+        <% if (post) { %> value="<%= post.lastName %>"<% } %> >
+    </div>
+    <div class="mb-2 col">
+        <label for="nid" class="form-label">เลขประจำตัวฯ</label>
+        <input type="text" class="form-control" id="nid" name="nid"
+        <% if (post) { %> value="<%= post.nid %>"<% } %> >
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="mt-2 mb-4">
+    <label for="summary" class="form-label">สรุปประเด็น <%= poster ? "*" : "" %></label>
+    <textarea class="form-control" id="summary" name="summary"><% if (post) { %><%= post.summary %><% } %> </textarea>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="mb-2 col">
+            <label for="numberOfUnits" class="form-label">จำนวนแปลง/หลัง</label>
+            <input type="text" class="form-control" id="numberOfUnits" name="numberOfUnits"
+            <% if (post) { %> value="<%= post.numberOfUnits %>"<% } %> >
+        </div>
+        <div class="mb-2 col">
+            <label for="tambon" class="form-label">ตำบล <%= poster ? "*" : "" %></label>
+            <input type="text" class="form-control" id="tambon" name="tambon"
+            <% if (post) { %> value="<%= post.tambon %>"<% } %> >
+        </div>
+        <div class="mb-2 col">
+            <label for="amphur" class="form-label">อำเภอ <%= poster ? "*" : "" %></label>
+            <input type="text" class="form-control" id="amphur" name="amphur"
+            <% if (post) { %> value="<%= post.amphur %>"<% } %> >
+        </div>
+        <div class="mb-2 col">
+            <label for="mapPoint" class="form-label">พิกัด</label>
+            <input type="text" class="form-control" id="mapPoint" name="mapPoint"
+            <% if (post) { %> value="<%= post.mapPoint %>"<% } %> >
+        </div>
+
+    </div>
+
+<div class="row">
+    <div class="mb-2 col">
+        <label for="deed" class="form-label">เลขที่โฉนด</label>
+        <input type="text" class="form-control" id="deed" name="deed"
+        <% if (post) { %> value="<%= post.deed %>"<% } %> >
+    </div>
+    <div class="mb-2 col">
+        <label for="imageLink" class="form-label">ลิงค์รูปภาพ</label>
+        <input type="text" class="form-control" id="imageLink" name="imageLink"
+        <% if (post) { %> value="<%= post.imageLink %>"<% } %> >
+    </div>
+
+</div>
+
+<p class="mb-5"> * ช่องที่จำเป็นต้องกรอกใส่ข้อมูล </p>
+

@@ -28,7 +28,10 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
-      const comments = await Comment.find({ post: req.params.id })
+      const comments = await Comment.find({
+        post: req.params.id,
+        user: req.user.id,
+      })
         .sort({ createdAt: "desc" })
         .lean();
 
@@ -129,10 +132,20 @@ module.exports = {
   deletePost: async (req, res) => {
     try {
       // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
-      // Delete post from db
-      await Post.remove({ _id: req.params.id });
-      console.log("Deleted Post");
+      const post = await Post.findById({ _id: req.params.id });
+      // find comment that match post and the comment user
+      const comments = await Comment.find({
+        post: req.params.id,
+        user: req.query.commenterid,
+      }).lean();
+      // if poster want to delete, change flag to delete
+      if (post.posterDelete === false) {
+        post.posterDelete = true;
+        // res.redirect(`/post/${req.params.id}`);
+      } else if (post.posterDelete && comments.length > 0) {
+        await Post.remove({ _id: req.params.id });
+        console.log("Deleted Post");
+      }
       res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");

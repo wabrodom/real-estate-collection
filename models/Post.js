@@ -75,6 +75,10 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    posterDelete: {
+      type: Boolean,
+      required: false,
+    },
   },
   { timestamps: { createdAt: "created_at" } }
 );

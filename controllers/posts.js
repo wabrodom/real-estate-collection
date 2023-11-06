@@ -139,10 +139,14 @@ module.exports = {
         user: req.query.commenterid,
       }).lean();
       // if poster want to delete, change flag to delete
-      if (post.posterDelete === false) {
-        post.posterDelete = true;
-        // res.redirect(`/post/${req.params.id}`);
-      } else if (post.posterDelete && comments.length > 0) {
+      if (req.user.id === post.user.toString()) {
+        post.posterDelete = !post.posterDelete;
+        post.save();
+      } else if (
+        post.posterDelete &&
+        comments.length > 0 &&
+        req.user.id !== post.user
+      ) {
         await Post.remove({ _id: req.params.id });
         console.log("Deleted Post");
       }

@@ -1,4 +1,5 @@
 const Comment = require("../models/Comment");
+const Post = require("../models/Post");
 
 module.exports = {
   // getFeed: async (req, res) => {
@@ -24,6 +25,12 @@ module.exports = {
   createComment: async (req, res) => {
     console.log(req.user);
     try {
+      // const post = await Post.find({ _id: req.params.id }).updateOne(
+      //   {},
+      //   { $set: { updatedAt: new Date() } }
+      // );
+      Post.updateOne({ _id: req.params.id }, { updatedAt: new Date() }).exec();
+
       await Comment.create({
         state: req.body.state,
         socialMediaName: req.body.socialMediaName,

@@ -115,8 +115,17 @@
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <%if ( post.posterDelete && post.user == user.id ) {%>
+            <span>คุณเลือกที่จะลบข้อมูลนี้แล้ว ! </span>
+            <button class="btn btn-primary" type="submit"> ยกเลิกการลบ </button>
+          <%} else if (post.posterDelete && commenters.includes(user.id)) {%>
+            <span>ผู้โพสต้องการลบข้อมูล เห็นด้วยกับการลบ? </span>
+            <button class="btn btn-primary" type="submit"> ยืนยันการลบข้อมูล </button>
+          <%} else {%> 
+            <button class="btn btn-primary fa fa-trash" type="submit"></button> 
+          <%}%>  
         </form>
+         
         <%}%>
       </div>
     </div>

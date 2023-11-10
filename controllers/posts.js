@@ -141,7 +141,7 @@ module.exports = {
       // if poster want to delete, change flag to delete
       if (req.user.id === post.user.toString()) {
         post.posterDelete = !post.posterDelete;
-        post.save();
+        post.save({ timestamps: false });
       } else if (
         post.posterDelete &&
         comments.length > 0 &&

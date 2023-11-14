@@ -142,6 +142,8 @@ module.exports = {
       if (req.user.id === post.user.toString()) {
         post.posterDelete = !post.posterDelete;
         post.save({ timestamps: false });
+        res.redirect(`/post/${req.params.id}`);
+        return;
       } else if (
         post.posterDelete &&
         comments.length > 0 &&

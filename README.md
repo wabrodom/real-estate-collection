@@ -1,18 +1,26 @@
-# Real Estate Collection
+# Real Estate Social Tracking App
+-> https://real-estate-social-tracking-app-b76i.onrender.com/
 
 ## Ojective
 
-This web application goal is intended to assist officers in collecting real estate data from social media.
+This web application objective is intended to assist investigative officers in collecting real estate data from social media platforms.
 
 ## Primary Goal
 
-The primary goal is to eliminate duplicated efforts within the team, especially when team members spot the same entrepreneur posting simultaneously. Before team members will need to repeatedly ask others or ignore the new posts entirely, and hope others will keep track of new posts.
+The primary goal is to eliminate duplicated efforts within the team. Especially when team members spot the same entrepreneur posting at the same time. Previously, team members had to ask others to check whether another team member had already done a search for this entrepreneur. Or they would ignore new posts entirely and hope that others would keep track of the new posts for the team.
 
 ## Efficient Workflow
 
-By using this app in initial searches before delving into more in-depth data search, the team can operate concurrently, resulting in significant time savings.
+By using this app in initial searches before doing more in-depth data search, the team can operate concurrently, resulting in significant time savings.
 
-#### The application not only streamlines data collection but also enhances team productivity in managing real estate data from social media.
+#### The application not only streamlines data collection but also increase team productivity in managing real estate data from social media.
+
+## Test user
+```
+username: tester@test.com
+password: test123test
+```
+
 
 ---
 
